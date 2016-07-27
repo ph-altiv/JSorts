@@ -12,4 +12,6 @@ function bRandom_Click()
 	$('p#pArray').remove();
 	if($('input#cbArrView').prop('checked'))
 		$('div#dRandomArray').append('<p id="pArray">' + arr.join(', ') + '</p>');
+		
+	sorts();
 }

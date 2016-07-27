@@ -1,4 +1,6 @@
 var arr;
+var sortNames = ['bubble'];
+var dirAlgorithm = "scripts/algorithms/";
 
 function getMsec() {
 	var d = new Date();
@@ -17,4 +19,12 @@ function genRanArr(len)
 		arr.push(a[rind]);
 		a.splice(rind, 1);
 	}
+}
+
+function sorts()
+{
+	$.getScript(dirAlgorithm + sortNames[0] + ".js", function(){
+		sortBubble(arr);
+	});
+	
 }
