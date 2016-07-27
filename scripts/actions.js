@@ -8,10 +8,8 @@ function bRandom_Click()
 		return;
 	}
 	genRanArr(t);
-	$('div#dResults').html('');
 	$('p#pArray').remove();
 	if($('input#cbArrView').prop('checked'))
 		$('div#dRandomArray').append('<p id="pArray">' + arr.join(', ') + '</p>');
-		
-	sorts();
+	runSorts();
 }

@@ -1,4 +1,4 @@
-function sortBubble(arr) {
+sorts.sortBubble = function(arr) {
 	var a = arr.slice();
 	for(var i = a.length; i > 1; i--)
 	{
@@ -6,5 +6,4 @@ function sortBubble(arr) {
 			if(a[j] > a[j1])
 				a[j1] = [a[j], a[j] = a[j1]][0];
 	}
-	console.log(a);
 }

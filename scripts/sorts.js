@@ -1,6 +1,7 @@
 var arr;
 var sortNames = ['bubble'];
 var dirAlgorithm = "scripts/algorithms/";
+var sorts = {};
 
 function getMsec() {
 	var d = new Date();
@@ -21,10 +22,17 @@ function genRanArr(len)
 	}
 }
 
-function sorts()
+function runSorts()
 {
-	$.getScript(dirAlgorithm + sortNames[0] + ".js", function(){
-		sortBubble(arr);
+	var res = [];
+	$('div#dResults').html('');
+	sortNames.forEach(function(name){
+		$.getScript(dirAlgorithm + name + ".js", function(){
+			var Name = name.charAt(0).toUpperCase() + name.substr(1);
+			var t = getMsec();
+			sorts['sort' + Name](arr);
+			t = getMsec() - t;
+			$('div#dResults').append('<p>' + Name + ': ' + t + ' ms' + '</p>');
+		});
 	});
-	
 }
