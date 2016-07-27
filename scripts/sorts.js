@@ -1,14 +1,20 @@
-var getMsec = function() {
+var arr;
+
+function getMsec() {
 	var d = new Date();
 	return d.getTime();
 }
 
-var s = getMsec();
-console.log(s);
-var a = 10000000000;
-for(i = 1; i < 10000; i++)
+function genRanArr(len)
 {
-	a = a/3;
+	var a = [];
+	arr = [];
+	for(var i = 0; i < len; i++)
+		a.push(i);
+	for( ; len > 0; len--)
+	{
+		rind = Math.floor(Math.random() * len);
+		arr.push(a[rind]);
+		a.splice(rind, 1);
+	}
 }
-r = getMsec() - s;
-document.write(r + ' msec');
