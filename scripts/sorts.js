@@ -1,5 +1,5 @@
 var arr;
-var sortNames = ['bubble', 'cocktail'];
+var sortNames = ['bubble', 'cocktail', 'odd-even'];
 var dirAlgorithm = "scripts/algorithms/";
 var sorts = {};
 
