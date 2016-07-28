@@ -4,17 +4,18 @@
 	<title>JS</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-	<script src="scripts/sorts.js"></script>
-	<script src="scripts/actions.js"></script>
+	<script src="scripts/sorts.js"></script> <!-- осуществляет вывод результатов сортировок -->
+	<script src="scripts/actions.js"></script> <!-- действия элементов управления страницы -->
 </head>
 <body>
-	<div id="dRandomArray">
+	<div id="dRandomArray"> <!-- блок для получения произвольного массива -->
 		<div id="dRandBlock">
 		    <input type="text" id="tArrLen" value="Длина массива"/>
 		    <input type="button" id="bRandom" value="Составить массив" onclick="bRandom_Click();"><br/>
 		    <input type="checkbox" id="cbArrView">Выводить массив<br/>
-	    </div>
-    </div>
-    <div id="dResults"></div>
+	    </div> <!-- dRandBlock -->
+    </div> <!-- dRandomArray -->
+    <div id="dResults"> <!-- блок для вывода результатов -->
+    </div> <!-- dResults -->
 </body>
 </html>

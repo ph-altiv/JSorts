@@ -3,11 +3,13 @@ var sortNames = ['bubble'];
 var dirAlgorithm = "scripts/algorithms/";
 var sorts = {};
 
-function getMsec() {
+/* время в милисекундах с полуночи 1 января 1970 года GMT */
+function getMsec() { 
 	var d = new Date();
 	return d.getTime();
 }
 
+/* заполняет массив произвольными значениями длиной len */
 function genRanArr(len)
 {
 	var a = [];
@@ -22,17 +24,17 @@ function genRanArr(len)
 	}
 }
 
+/* запускает все сортировки и выводит результаты на страницу в блок 'div#dResults' */
 function runSorts()
 {
 	var res = [];
-	$('div#dResults').html('');
+	$('div#dResults').html(''); // очистка от предыдущих результатоы
 	sortNames.forEach(function(name){
-		$.getScript(dirAlgorithm + name + ".js", function(){
-			var Name = name.charAt(0).toUpperCase() + name.substr(1);
-			var t = getMsec();
-			sorts['sort' + Name](arr);
-			t = getMsec() - t;
-			$('div#dResults').append('<p>' + Name + ': ' + t + ' ms' + '</p>');
+		$.getScript(dirAlgorithm + name + ".js", function(){ // загрузка скрипта по имени сортировки
+			var t = getMsec(); // засекаем время выполнения
+			sorts[name](arr); // выполнение сортировки
+			t = getMsec() - t; 
+			$('div#dResults').append('<p>' + name + ': ' + t + ' ms' + '</p>'); // вывод имени и времени выполнения
 		});
 	});
 }
