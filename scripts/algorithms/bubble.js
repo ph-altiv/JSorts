@@ -1,5 +1,5 @@
-sorts.sortBubble = function(arr) {
-	var a = arr.slice();
+/* пузырьковая сортировка */
+sorts.bubble = function(a) {
 	for(var i = a.length; i > 1; i--)
 	{
 		for(var j = 0, j1 = 1; j1 < i; j++, j1++)
